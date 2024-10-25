@@ -15,13 +15,10 @@ if ($conn->connect_error) {
 $correo = $_POST['correo'];
 $clave = $_POST['clave'];
 
-// Encriptar la clave ingresada para compararla con la clave encriptada en la base de datos
-$clave_encriptada = hash('sha256', $clave);
-
-// Consulta SQL para buscar el correo y la clave
+// Consulta SQL para buscar el correo y la clave sin encriptar
 $sql = "SELECT * FROM usuarios WHERE correo = ? AND clave_encriptada = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ss", $correo, $clave_encriptada);
+$stmt->bind_param("ss", $correo, $clave); // Aquí usamos la clave sin encriptar
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -37,7 +34,7 @@ if ($result->num_rows > 0) {
     exit(); // Asegúrate de llamar a exit después de header para detener la ejecución del script
 } else {
     // El correo o la clave son incorrectos
-    echo "Correo o clave incorrectos.";
+    echo "<script>alert('Correo o clave incorrectos.'); window.location.href = 'Masterlogin.php';</script>";
 }
 
 $stmt->close();

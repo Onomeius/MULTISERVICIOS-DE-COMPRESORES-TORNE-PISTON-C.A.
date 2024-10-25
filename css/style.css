@@ -152,6 +152,24 @@ p {
 
 /* Nav Styles
 ---------------------------------*/
+
+.navbar-nav .dropdown-menu {
+    background-color: #222; /* Color de fondo */
+    border: none; /* Sin borde */
+    box-shadow: none; /* Sin sombra */
+}
+
+.navbar-nav .dropdown-menu > li > a {
+    color: #fff; /* Color del texto */
+    padding: 10px 20px; /* Espaciado */
+    font-size: 10px; /* Tamaño de fuente */
+}
+
+.navbar-nav .dropdown-menu > li > a:hover {
+    background-color: #555; /* Color de fondo al pasar el mouse */
+    color: #fff; /* Color del texto al pasar el mouse */
+}
+
 .navbar-inverse {
     background: transparent;
     border-color: transparent;
@@ -504,6 +522,7 @@ a.contact_btn:hover {
 .input-text {
     background: transparent;
 }
+
 
 
 /* Portfolio

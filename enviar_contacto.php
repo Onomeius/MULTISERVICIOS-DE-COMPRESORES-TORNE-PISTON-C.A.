@@ -30,7 +30,7 @@ $sql = "INSERT INTO contactos (nombre, email, asunto, mensaje) VALUES ('$nombre'
 
 if ($conn->query($sql) === TRUE) {
   // Si la inserción es exitosa, enviar correo
-  $destinatario = "brayaneherrera2000@gmail.com"; // Cambia a tu correo
+  $destinatario = "PedroPerez@gmail.com"; // Cambia a tu correo
   $titulo = "Nuevo contacto de proveedor - $asunto";
   $contenido = "
     Nombre: $nombre\n

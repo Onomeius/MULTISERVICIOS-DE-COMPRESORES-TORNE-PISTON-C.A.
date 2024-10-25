@@ -5,6 +5,7 @@
 $result = include('conexion.php');
 ?>
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -68,6 +69,7 @@ $result = include('conexion.php');
             background-color: #007BFF;
             text-decoration: none;
             border-radius: 4px;
+            margin-right: 15px; /* Aumentar el espaciado entre botones */
         }
         .btn:hover {
             background-color: #0056b3;
@@ -101,7 +103,8 @@ $result = include('conexion.php');
 </head>
 <body>
     <div class="nav">
-        <a href="cerrar_sesion.php">Cerrar Sesión</a> <!-- Botón de cerrar sesión -->
+        <!-- Botón de cerrar sesión -->
+        <a href="cerrar_sesion.php">Cerrar Sesión</a>
     </div>
     <div class="container">
         <h1>Lista de Solicitudes</h1>
@@ -133,8 +136,8 @@ $result = include('conexion.php');
                                 <td>" . $row['fecha'] . "</td>
                                 <td>" . htmlspecialchars($row['estatus']) . "</td> <!-- Mostrar el estatus -->
                                 <td>
-                                    <a class='btn' href='editar.php?id=" . $row['id'] . "'>Cambiar</a> | 
-                                    <a class='btn' href='eliminar.php?id=" . $row['id'] . "'>Eliminar</a>
+                                    <br><a class='btn' href='editar.php?id=" . $row['id'] . "'>Cambiar</a></br> 
+                                    </br><a class='btn' href='eliminar.php?id=" . $row['id'] . "'>Eliminar</a>
                                 </td>
                               </tr>";
                     }

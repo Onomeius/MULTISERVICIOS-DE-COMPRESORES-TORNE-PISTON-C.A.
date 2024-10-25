@@ -33,25 +33,33 @@
       </div>
       <nav class="navbar navbar-inverse" role="navigation">
         <div class="navbar-header">
-          <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> 
-            <span class="sr-only">Toggle navigation</span> 
-            <span class="icon-bar"></span> 
-            <span class="icon-bar"></span> 
-            <span class="icon-bar"></span> 
-          </button>
+            <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> 
+                <span class="sr-only">Toggle navigation</span> 
+                <span class="icon-bar"></span> 
+                <span class="icon-bar"></span> 
+                <span class="icon-bar"></span> 
+            </button>
         </div>
         <div id="main-nav" class="collapse navbar-collapse navStyle">
-          <ul class="nav navbar-nav" id="mainNav">
-            <li class="active"><a href="#hero_section" class="scroll-link" style="font-size: 10;">Inicio</a></li>
-            <li><a href="#aboutUs" class="scroll-link" style="font-size: 10;">Sobre nosotros</a></li>
-            <li><a href="#service" class="scroll-link" style="font-size: 10;">Servicios</a></li>
-            <li><a href="#map-section" class="scroll-link" style="font-size: 10;">Ubicacion</a></li>
-            <li><a href="#team" class="scroll-link" style="font-size: 10;">Equipo</a></li>
-            <li><a href="#contact" class="scroll-link" style="font-size: 10;">Contacto</a></li>
-            <li><a href="proveedor/login.html" class="scroll-link" style="font-size: 10;">Iniciar Sesion Proveedor</a></li>
-          </ul>
+            <ul class="nav navbar-nav" id="mainNav">
+                <li class="active"><a href="#hero_section" class="scroll-link" style="font-size: 10;">Inicio</a></li>
+                <li><a href="#aboutUs" class="scroll-link" style="font-size: 10;">Sobre nosotros</a></li>
+                <li><a href="#service" class="scroll-link" style="font-size: 10;">Servicios</a></li>
+                <li><a href="#map-section" class="scroll-link" style="font-size: 10;">Ubicación</a></li>
+                <li><a href="#team" class="scroll-link" style="font-size: 10;">Equipo</a></li>
+                <li><a href="#contact" class="scroll-link" style="font-size: 10;">Contacto</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="font-size: 10;">
+                        Consultor <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="proveedor/Masterlogin.php" class="scroll-link" style="color: black; text-decoration: none;">Iniciar Sesión</a></li>
+                      <li><a href="Registro/Registro.html" class="scroll-link" style="color: black; text-decoration: none;">Registro</a></li>                      
+                    </ul>
+                </li>
+            </ul>
         </div>
-      </nav>      
+    </nav>       
     </div>
   </div>
 </header>

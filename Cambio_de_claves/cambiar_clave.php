@@ -25,8 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $resultado = $conn->query($sql);
 
         if ($resultado->num_rows > 0) {
-            // Actualizar la contraseña en la base de datos (sin encriptar)
-            $sql = "UPDATE usuarios SET clave_encriptada='$nueva_clave' WHERE correo='$email'";
+            // Encriptar la nueva clave usando SHA-256
+            $nueva_clave_encriptada = hash('sha256', $nueva_clave);
+
+            // Actualizar la contraseña en la base de datos (con clave encriptada)
+            $sql = "UPDATE usuarios SET clave_encriptada='$nueva_clave_encriptada' WHERE correo='$email'";
             
             if ($conn->query($sql) === TRUE) {
                 // Si la clave se cambió exitosamente, mostrar alerta y redirigir

@@ -87,8 +87,8 @@
         function mostrarClaveAcceso() {
             var rolSelect = document.getElementById("rol_id");
             var claveAccesoDiv = document.getElementById("clave_acceso_div");
-            claveAccesoDiv.style.display = (rolSelect.value == 2 || rolSelect.value == 3 || rolSelect.value == 4) ? "block" : "none";
-            
+            claveAccesoDiv.style.display = (rolSelect.value == 1 || rolSelect.value == 2 || rolSelect.value == 3) ? "block" : "none";
+
             // Limpiar el campo de clave de acceso al cambiar el rol
             document.getElementById("clave_acceso").value = '';
         }
@@ -103,11 +103,11 @@
         <label for="clave">Contraseña:</label>
         <input type="password" id="clave" name="clave" required>
         
-        <label for="rol_id">Rol:</label> <!-- Cambiado de "Rol ID" a "Rol" -->
+        <label for="rol_id">Rol:</label>
         <select id="rol_id" name="rol_id" onchange="mostrarClaveAcceso()" required>
-            <option value="2">Superadmin</option>
-            <option value="3">Admin</option>
-            <option value="4">Genérico</option>
+            <option value="1">Superadmin</option>
+            <option value="2">Admin</option>
+            <option value="3">Genérico</option>
         </select>
 
         <div id="clave_acceso_div" style="display:none;">
@@ -116,9 +116,7 @@
         </div>
         
         <input type="submit" value="Registrar">
-        <button type="button" onclick="window.location.href='../index.html'">Regresar a Inicio</button> <!-- Cambiado a type="button" -->
+        <button type="button" onclick="window.location.href='../index.html'">Regresar a Inicio</button>
     </form>
 </body>
-</html>
-
 </html>

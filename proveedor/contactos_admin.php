@@ -107,7 +107,7 @@ $result = include('conexion.php');
 <body>
     <div class="nav">
         <!-- Botón de volver -->
-        <a href="superadmin_dashboard.php">Volver</a>
+        <a href="admin_dashboard.php">Volver</a>
     </div>
     <div class="container">
         <h1>Lista de Solicitudes</h1>

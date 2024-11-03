@@ -15,25 +15,45 @@ if ($conn->connect_error) {
 $correo = $_POST['correo'];
 $clave = $_POST['clave'];
 
-// Consulta SQL para buscar el correo y la clave sin encriptar
-$sql = "SELECT * FROM usuarios WHERE correo = ? AND clave_encriptada = ?";
+// Consulta SQL para buscar el usuario
+$sql = "SELECT * FROM usuarios WHERE correo = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ss", $correo, $clave); // Aquí usamos la clave sin encriptar
+$stmt->bind_param("s", $correo); 
 $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    // El usuario ha sido autenticado correctamente
     $usuario = $result->fetch_assoc();
-    // Iniciar sesión
-    session_start();
-    $_SESSION['correo'] = $usuario['correo'];
+    
+    // Verificar la clave encriptada
+    if (hash('sha256', $clave) === $usuario['clave_encriptada']) {
+        // Iniciar sesión
+        session_start();
+        $_SESSION['correo'] = $usuario['correo'];
+        $_SESSION['rol_id'] = $usuario['rol_id']; // Guardamos el rol en la sesión
 
-    // Redirigir a Vista_1.html
-    header("Location: contactos.php");
-    exit(); // Asegúrate de llamar a exit después de header para detener la ejecución del script
+        // Redirigir según el rol
+        switch ($usuario['rol_id']) {
+            case 1: // Superadmin
+                header("Location: superadmin_dashboard.php");
+                break;
+            case 2: // Admin
+                header("Location: admin_dashboard.php");
+                break;
+            case 3: // Genérico
+                header("Location: generico_dashboard.php");
+                break;
+            default:
+                header("Location: index.html"); // Redirigir a una página por defecto
+                break;
+        }
+        exit(); // Asegúrate de llamar a exit después de header para detener la ejecución del script
+    } else {
+        // Clave incorrecta
+        echo "<script>alert('Correo o clave incorrectos.'); window.location.href = 'Masterlogin.php';</script>";
+    }
 } else {
-    // El correo o la clave son incorrectos
+    // Correo no encontrado
     echo "<script>alert('Correo o clave incorrectos.'); window.location.href = 'Masterlogin.php';</script>";
 }
 

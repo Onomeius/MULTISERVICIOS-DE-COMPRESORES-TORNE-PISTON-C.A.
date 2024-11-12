@@ -157,6 +157,8 @@ $result = $conn->query($sql);
     <nav>
         <ul>
             <li><a href="generico_dashboard.php">Inicio</a></li>
+            <li><a href="responder_contactogenerico.php">Responder</a></li>
+            <li><a href="ver_respuestagenerico.php">Ver Respuestas</a></li>
             <li><a href="cerrar_sesion.php">Cerrar Sesión</a></li>
         </ul>
     </nav>

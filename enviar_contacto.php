@@ -51,8 +51,8 @@ if ($conn->query($sql) === TRUE) {
     echo "Error al enviar el correo.";
   }
 
-  // Redirigir a index.html
-  header("Location: index.html");
+  // Redirigir a index.php
+  header("Location: index.php");
   exit(); // Asegurarse de detener el script después de la redirección
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;

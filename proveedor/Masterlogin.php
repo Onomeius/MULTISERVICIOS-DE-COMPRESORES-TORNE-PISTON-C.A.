@@ -119,7 +119,7 @@
         <button type="submit" class="login-btn">Iniciar Sesión</button>
     </form>
     <p>¿Olvidaste tu contraseña? <a href="../Cambio_de_claves/cambiar_clave_form.php">Recupérala aquí</a></p>
-    <p>¿Quieres Volver al Inicio? <a href="../index.html">Pagina de Inicio</a></p>
+    <p>¿Quieres Volver al Inicio? <a href="../index.php">Pagina de Inicio</a></p>
 </div>
 
 <script>

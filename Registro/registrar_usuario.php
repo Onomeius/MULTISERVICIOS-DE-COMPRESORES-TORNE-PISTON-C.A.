@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ssi", $correo, $clave_encriptada, $rol_id); // "ssi" significa: string, string, integer
 
     if ($stmt->execute()) {
-        echo "<script>alert('Usuario registrado exitosamente.'); window.location.href='../index.html';</script>";
+        echo "<script>alert('Usuario registrado exitosamente.'); window.location.href='../index.php';</script>";
     } else {
         echo "<script>alert('Error al registrar el usuario: " . $conexion->error . "'); window.location.href='Registro.html';</script>";
     }

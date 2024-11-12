@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Si la clave se cambió exitosamente, mostrar alerta y redirigir
                 echo "<script>
                         alert('La clave fue cambiada con éxito.');
-                        window.location.href = '../index.html'; // Redirigir a index.html
+                        window.location.href = '../index.php'; // Redirigir a index.php
                       </script>";
                 exit; // Asegurarse de que el script se detenga después de la redirección
             } else {

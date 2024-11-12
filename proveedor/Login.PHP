@@ -44,7 +44,7 @@ if ($result->num_rows > 0) {
                 header("Location: generico_dashboard.php");
                 break;
             default:
-                header("Location: index.html"); // Redirigir a una página por defecto
+                header("Location: index.php"); // Redirigir a una página por defecto
                 break;
         }
         exit(); // Asegúrate de llamar a exit después de header para detener la ejecución del script
